@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+.loader {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: calc(50% - 100px / 2);
+  left: calc(50% - 100px / 2);
+  animation-name: rotation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.585, 0.6, 0.15, 0.86);
+}
+.loader__line {
+  box-sizing: border-box;
+  position: absolute;
+  opasity: 0.5;
+  width: 19px;
+  height: 19px;
+  border-radius: 9.5px;
+  animation-name: grow-line;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.loader__line_green {
+  background-color: #8fc745;
+  mix-blend-mode: multiply;
+  left: 20%;
+  top: 0%;
+  animation-name: move-green;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: easy-out;
+}
+.loader__line_magenta {
+  background-color: #ff564d;
+  mix-blend-mode: multiply;
+  bottom: 40%;
+  left: 0%;
+  transform-origin: 0% 100%;
+  transform: rotate(90deg);
+  animation-name: move-magenta;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: easy-out;
+}
+.loader__line_yellow {
+  background-color: #fabd00;
+  mix-blend-mode: multiply;
+  right: 20%;
+  bottom: 0%;
+  animation-name: move-yellow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: easy-out;
+}
+.loader__line_blue {
+  background-color: #40c1ef;
+  mix-blend-mode: multiply;
+  top: 40%;
+  right: 0%;
+  transform-origin: 100% 0%;
+  transform: rotate(90deg);
+  animation-name: move-blue;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: easy-out;
+}
+@keyframes rotation {
+  70% {
+    transform: rotate(342deg);
+  }
+  100% {
+    transform: rotate(342deg);
+  }
+}
+@keyframes move-green {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+@keyframes move-magenta {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: 40%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes move-yellow {
+  0% {
+    bottom: 0%;
+  }
+  50% {
+    bottom: 40%;
+  }
+  100% {
+    bottom: 0%;
+  }
+}
+@keyframes move-blue {
+  0% {
+    right: 0%;
+  }
+  50% {
+    right: 40%;
+  }
+  100% {
+    right: 0%;
+  }
+}

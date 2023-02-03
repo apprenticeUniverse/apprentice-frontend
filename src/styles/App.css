@@ -1,0 +1,19 @@
+body {
+  margin: 0px;
+  background-color: "#f2f1f3";
+}
+
+.titleAssignents.MuiListItemText-primary {
+  color: #3f51b5;
+  padding: 2%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+}

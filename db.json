@@ -1,0 +1,53 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Question #3",
+      "answer": "This is a simple answer",
+      "date": "2022-1-17T17:30:31.098Z",
+      "topic": "A"
+    },
+    {
+      "id": 2,
+      "question": "Question #2",
+      "answer": "This is a simple answer too",
+      "date": "2022-2-17T17:30:31.098Z",
+      "topic": "A"
+    },
+    {
+      "id": 3,
+      "question": "Question #3",
+      "answer": "This is a simple answer as well",
+      "date": "2022-3-17T17:30:31.098Z",
+      "topic": "B"
+    },
+    {
+      "question": "afadsf",
+      "answer": "afadasdff",
+      "date": "2023-01-16T20:50:57.644Z",
+      "topic": "dfadfadf",
+      "id": 8
+    },
+    {
+      "question": "Cual es ",
+      "answer": "afdadf",
+      "date": "2023-01-16T21:30:42.646Z",
+      "topic": "fadfa",
+      "id": 9
+    },
+    {
+      "question": "Ret",
+      "answer": "eraerae",
+      "date": "2023-01-16T21:33:01.146Z",
+      "topic": "areraer",
+      "id": 10
+    },
+    {
+      "question": "What is my encora?",
+      "answer": "Afnqoegnqoengoqengqe",
+      "date": "2023-01-17T01:19:04.129Z",
+      "topic": "ES",
+      "id": 11
+    }
+  ]
+}
