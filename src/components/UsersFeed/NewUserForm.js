@@ -134,58 +134,67 @@ function NewUserForm({
           />
         )}
         <Grid container>
-          {!fromBatchID && (
+          {userInfo?.role != "APPRENTICE" && (
             <>
-              {userInfo?.role !== "SUPER_ADMIN" && (
-                <Grid item xs={12} md={6}>
-                  <InputLabel id="simple-select-label">Role</InputLabel>
-                  <Select
-                    labelId="simple-select-label"
-                    id="simple-select"
-                    value={role}
-                    label="Role"
-                    onChange={roleHandler}
-                  >
-                    <MenuItem value={"APPRENTICE"}>Apprentice</MenuItem>
-                    <MenuItem value={"STAKEHOLDER"}>Stakeholder</MenuItem>
-                    <MenuItem value={"ADMIN"}>Admin</MenuItem>
-                    <MenuItem value={"SUPER_ADMIN"}>Super Admin</MenuItem>
-                  </Select>
-                </Grid>
-              )}
-
-              {role === "APPRENTICE" && (
+              {!fromBatchID && (
                 <>
-                  {batchesData.length === 0 ? (
-                    <Box marginLeft={1} marginTop={1}>
-                      <Alert severity="warning">
-                        There aren't any active Batches, please create a new one
-                      </Alert>
-                    </Box>
-                  ) : (
+                  {userInfo?.role !== "SUPER_ADMIN" && (
+                    <Grid item xs={12} md={6}>
+                      <InputLabel id="simple-select-label">Role</InputLabel>
+                      <Select
+                        labelId="simple-select-label"
+                        id="simple-select"
+                        value={role}
+                        label="Role"
+                        onChange={roleHandler}
+                      >
+                        {!userInfo && (
+                          <MenuItem value={"APPRENTICE"}>Apprentice</MenuItem>
+                        )}
+                        <MenuItem value={"STAKEHOLDER"}>Stakeholder</MenuItem>
+                        <MenuItem value={"ADMIN"}>Admin</MenuItem>
+                        <MenuItem value={"SUPER_ADMIN"}>Super Admin</MenuItem>
+                      </Select>
+                    </Grid>
+                  )}
+
+                  {role === "APPRENTICE" && (
                     <>
-                      <Grid item xs={12} md={6}>
-                        <InputLabel id="simple-select-label">Batch</InputLabel>
-                        <Select
-                          labelId="simple-select-label"
-                          id="simple-select"
-                          value={batch}
-                          label="Batch"
-                          onChange={batchHandler}
-                        >
-                          {batchesData.map((option) => (
-                            <MenuItem value={option} key={option.id}>
-                              {option.batchName}
-                            </MenuItem>
-                          ))}
-                        </Select>
-                      </Grid>
-                      <Box marginLeft={1} marginTop={1}>
-                        <Alert severity="warning">
-                          Once you select a Batch the user can't be moved to
-                          another Batch
-                        </Alert>
-                      </Box>
+                      {batchesData.length === 0 ? (
+                        <Box marginLeft={1} marginTop={1}>
+                          <Alert severity="warning">
+                            There aren't any active Batches, please create a new
+                            one
+                          </Alert>
+                        </Box>
+                      ) : (
+                        <>
+                          <Grid item xs={12} md={6}>
+                            <InputLabel id="simple-select-label">
+                              Batch
+                            </InputLabel>
+                            <Select
+                              labelId="simple-select-label"
+                              id="simple-select"
+                              value={batch}
+                              label="Batch"
+                              onChange={batchHandler}
+                            >
+                              {batchesData.map((option) => (
+                                <MenuItem value={option} key={option.id}>
+                                  {option.batchName}
+                                </MenuItem>
+                              ))}
+                            </Select>
+                          </Grid>
+                          <Box marginLeft={1} marginTop={1}>
+                            <Alert severity="warning">
+                              Once you select a Batch the user can't be moved to
+                              another Batch
+                            </Alert>
+                          </Box>
+                        </>
+                      )}
                     </>
                   )}
                 </>
