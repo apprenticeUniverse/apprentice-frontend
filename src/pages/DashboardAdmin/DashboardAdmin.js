@@ -14,6 +14,7 @@ import FrameAssignment from "../../components/Items/Assignment/FrameAssignment";
 import Leftbar from "../../components/Dashboard/Leftbar";
 import FrameUser from "../../components/Items/User/FrameUser";
 import FrameTicket from "../../components/Items/Ticket/FrameTicket";
+import ArchivedBatchesFeed from "./ArchivedBatchesFeed";
 
 function DashboardAdmin() {
   return (
@@ -55,8 +56,23 @@ function DashboardAdmin() {
             />
 
             {/* Faq Page for all Roles*/}
-            <Route path="app/faq" element={<PageContainer><Faq></Faq></PageContainer>} />
-
+            <Route
+              path="app/faq"
+              element={
+                <PageContainer>
+                  <Faq></Faq>
+                </PageContainer>
+              }
+            />
+            {/* Page for Role*/}
+            <Route
+              path="app/admin/archives"
+              element={
+                <PageContainer>
+                  <ArchivedBatchesFeed />
+                </PageContainer>
+              }
+            />
             {/* Details pages for all Admin*/}
             <Route path="/app/assignment/:id" element={<FrameAssignment />} />
             <Route path="/app/batch/:id" element={<FrameBatch />} />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import {
   Divider,
@@ -34,6 +35,7 @@ function FrameUser() {
   const paramsData = useParams();
   const { id: userID } = paramsData;
   const [userData, setUserData] = useState({});
+  const { role: userRole } = useSelector((state) => state.userData);
 
   // Assignments Table columns definition
   const assignmentColumns = [
@@ -170,12 +172,14 @@ function FrameUser() {
                 : "Loading username..."}
             </Typography>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <NewUserPassword
-              buttonName={"Change password"}
-              onNewPassword={newPasswordHandler}
-            />
-          </Grid>
+          {userRole !== "STAKEHOLDER" && (
+            <Grid item xs={12} md={6}>
+              <NewUserPassword
+                buttonName={"Change password"}
+                onNewPassword={newPasswordHandler}
+              />
+            </Grid>
+          )}
         </Grid>
       </Box>
 

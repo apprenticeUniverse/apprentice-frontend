@@ -11,7 +11,7 @@ import DataTable from "../../components/DataTables/DataTable";
 
 const useStyles = makeStyles(() => ({}));
 
-function BatchesFeed() {
+function ArchivedBatchesFeed() {
   const classes = useStyles();
 
   const [batchesData, setBatchesData] = useState([]);
@@ -53,7 +53,7 @@ function BatchesFeed() {
   // GET BATCHES
   const fetchBatchesData = async () => {
     try {
-      const response = await api.get(url.GET_ALL_BATCHES);
+      const response = await api.get(url.GET_ALL_ARCHIVED_BATCHES);
       setBatchesData(response.data);
     } catch (e) {
       console.log(`Error: ${e.message}`);
@@ -64,17 +64,6 @@ function BatchesFeed() {
     fetchBatchesData();
   }, []);
 
-  // POST BATCH
-
-  const addBatch = async (newBatch) => {
-    try {
-      const response = await api.post(url.POST_NEW_BATCH, newBatch);
-      setBatchesData(batchesData.concat(response.data));
-    } catch (e) {
-      console.log(`Error: ${e.message}`);
-    }
-  };
-
   // PUT BATCH
 
   const editBatch = async (editedBatch, batchID) => {
@@ -83,7 +72,7 @@ function BatchesFeed() {
       setBatchesData(
         batchesData
           .map((obj) => (obj.id === response.data.id ? response.data : obj))
-          .filter((obj) => obj.active === true)
+          .filter((obj) => obj.active === false)
       );
     } catch (e) {
       console.log(`Error: ${e.message}`);
@@ -96,11 +85,8 @@ function BatchesFeed() {
         <Grid container>
           <Grid item xs={12} md={6}>
             <Typography variant="h4" className={classes.feedTitle}>
-              Apprentice Batches
+              Archived Batches
             </Typography>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <NewEditBatch onAddedBatch={addBatch} buttonName="New Batch" />
           </Grid>
         </Grid>
       </Box>
@@ -108,7 +94,10 @@ function BatchesFeed() {
       <Divider></Divider>
       <Box marginBottom={2} marginTop={2}>
         <Typography variant="p">
-          In this page all batches are presented.
+          In this page all archived batches are presented, you can still see all
+          the assignments and users, but all of them are unactive. If you want
+          to activate batch and all of its contents, please edit it and set it
+          to active.
         </Typography>
       </Box>
 
@@ -121,4 +110,4 @@ function BatchesFeed() {
   );
 }
 
-export default BatchesFeed;
+export default ArchivedBatchesFeed;

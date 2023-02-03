@@ -3,6 +3,7 @@ import {
   Groups2,
   Face6,
   Assignment,
+  School,
 } from "@mui/icons-material";
 
 export const leftbarItemsAdmin = [
@@ -33,5 +34,12 @@ export const leftbarItemsAdmin = [
     label: "F.A.Q",
     value: "Faq",
     route: "app/faq",
+  },
+  {
+    id: 4,
+    icon: <School sx={{ color: "white" }} />,
+    label: "Archives",
+    value: "Archives",
+    route: "app/admin/archives",
   },
 ];
