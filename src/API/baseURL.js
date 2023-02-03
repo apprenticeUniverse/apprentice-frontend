@@ -8,5 +8,4 @@ if (localStorage.getItem("SavedToken")) {
   instance.defaults.headers.common["Authorization"] =
     "Bearer " + localStorage.getItem("SavedToken");
 }
-
 export default instance;
