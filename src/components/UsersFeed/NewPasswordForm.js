@@ -34,7 +34,6 @@ function NewUserPassword({ onNewPassword, buttonName }) {
     onNewPassword(password);
     setOpen(false);
   };
-  console.log(password);
 
   return (
     <>

@@ -55,7 +55,6 @@ const RecentActivity = ({ assignms, tickets }) => {
   const [openDrop3, setOpenDrop3] = useState(false);
 
   const classes = useStyles();
-
   return (
     <>
       <Box marginBottom={3}>

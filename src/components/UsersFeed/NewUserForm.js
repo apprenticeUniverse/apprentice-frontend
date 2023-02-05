@@ -134,7 +134,7 @@ function NewUserForm({
           />
         )}
         <Grid container>
-          {userInfo?.role != "APPRENTICE" && (
+          {userInfo?.role !== "APPRENTICE" && (
             <>
               {!fromBatchID && (
                 <>

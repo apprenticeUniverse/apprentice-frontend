@@ -71,7 +71,6 @@ export const postAssignmentToBatch = (batchID) => {
 export const POST_NEW_BATCH = "/api/batch";
 export const GET_ALL_BATCHES = "/api/batch";
 export const GET_ALL_ARCHIVED_BATCHES = "/api/batch/archive";
-
 export const putBatch = (ID) => {
   return "/api/batch/" + ID;
 };
