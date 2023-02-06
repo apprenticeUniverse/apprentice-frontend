@@ -50,7 +50,6 @@ function NewApprenticeForm({ onNewBatch, onEditBatch, batchInfo }) {
       ownerID: stakeHolder.id,
       active,
     };
-    console.log(batchInfo);
     var formData = new FormData();
 
     Object.keys(batchObject).forEach((key) =>

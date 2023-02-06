@@ -67,7 +67,11 @@ function NewUserForm({
       role,
     };
     if (role === "APPRENTICE") {
-      onAddApprentice(userObject, batch.id);
+      if (userInfo) {
+        onEditUser(userObject, userInfo.id);
+      } else {
+        onAddApprentice(userObject, batch.id);
+      }
     } else {
       if (userInfo) {
         onEditUser(userObject, userInfo.id);
@@ -207,7 +211,9 @@ function NewUserForm({
             variant="contained"
             type="submit"
             disabled={
-              (role === "APPRENTICE") & (Object.keys(batch).length === 0)
+              userInfo
+                ? false
+                : (role === "APPRENTICE") & (Object.keys(batch).length === 0)
                 ? true
                 : false
             }
